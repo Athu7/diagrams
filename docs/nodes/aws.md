@@ -1046,6 +1046,9 @@ Node classes list of aws provider.
 <img width="30" src="/img/resources/aws/ml/comprehend.png" alt="Comprehend" style="float: left; padding-right: 5px;" >
 **diagrams.aws.ml.Comprehend**
 
+<img width="30" src="/img/resources/aws/ml/dataeaze.png" alt="Dataeaze" style="float: left; padding-right: 5px;" >
+**diagrams.aws.ml.Dataeaze**
+
 <img width="30" src="/img/resources/aws/ml/deep-learning-amis.png" alt="DeepLearningAmis" style="float: left; padding-right: 5px;" >
 **diagrams.aws.ml.DeepLearningAmis**
 

@@ -20,6 +20,10 @@ class Comprehend(_ML):
     _icon = "comprehend.png"
 
 
+class Dataeaze(_ML):
+    _icon = "dataeaze.png"
+
+
 class DeepLearningAmis(_ML):
     _icon = "deep-learning-amis.png"
 

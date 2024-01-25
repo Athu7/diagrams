@@ -22,20 +22,20 @@ providers=(
   "outscale"
 )
 
-if ! [ -x "$(command -v round)" ]; then
-  echo 'round is not installed'
-  exit 1
-fi
+# if ! [ -x "$(command -v round)" ]; then
+#   echo 'round is not installed'
+#   exit 1
+# fi
 
 if ! [ -x "$(command -v inkscape)" ]; then
   echo 'inkscape is not installed'
   exit 1
 fi
 
-if ! [ -x "$(command -v convert)" ]; then
-  echo 'image magick is not installed'
-  exit 1
-fi
+# if ! [ -x "$(command -v convert)" ]; then
+#   echo 'image magick is not installed'
+#   exit 1
+# fi
 
 if ! [ -x "$(command -v black)" ]; then
   echo 'black is not installed'
@@ -43,24 +43,24 @@ if ! [ -x "$(command -v black)" ]; then
 fi
 
 # preprocess the resources
-for pvd in "${providers[@]}"; do
-  # convert the svg to png for azure provider
-  if [ "$pvd" = "onprem" ] || [ "$pvd" = "azure" ]; then
-    echo "converting the svg to png using inkscape for provider '$pvd'"
-    python -m scripts.resource svg2png "$pvd"
-  fi
-  if [ "$pvd" == "oci" ] || [ "$pvd" = "ibm" ]; then
-    echo "converting the svg to png using image magick for provider '$pvd'"
-    python -m scripts.resource svg2png2 "$pvd"
-  fi
-  echo "cleaning the resource names for provider '$pvd'"
-  python -m scripts.resource clean "$pvd"
-  # round the all png images for aws provider
-  if [ "$pvd" = "aws" ]; then
-    echo "rounding the resources for provider '$pvd'"
-    python -m scripts.resource round "$pvd"
-  fi
-done
+# for pvd in "${providers[@]}"; do
+#   # convert the svg to png for azure provider
+#   if [ "$pvd" = "onprem" ] || [ "$pvd" = "azure" ]; then
+#     echo "converting the svg to png using inkscape for provider '$pvd'"
+#     python -m scripts.resource svg2png "$pvd"
+#   fi
+#   if [ "$pvd" == "oci" ] || [ "$pvd" = "ibm" ]; then
+#     echo "converting the svg to png using image magick for provider '$pvd'"
+#     python -m scripts.resource svg2png2 "$pvd"
+#   fi
+#   echo "cleaning the resource names for provider '$pvd'"
+#   python -m scripts.resource clean "$pvd"
+#   # round the all png images for aws provider
+#   if [ "$pvd" = "aws" ]; then
+#     echo "rounding the resources for provider '$pvd'"
+#     python -m scripts.resource round "$pvd"
+#   fi
+# done
 
 # generate the module classes and docs
 for pvd in "${providers[@]}"; do
